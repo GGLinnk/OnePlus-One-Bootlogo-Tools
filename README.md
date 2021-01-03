@@ -1,2 +1,2 @@
-# OnePlus-One-Bootlogo-Tools
+# OnePlus One Bootlogo Tools
 W.I.P. OnePlus One Bootlogo Tools
