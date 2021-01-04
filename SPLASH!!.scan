@@ -1,0 +1,55 @@
+ ʌ   ʌ   ʌ                       ʌ   ʌ   ʌ
+/!\ /!\ /!\ WARNING | DISCLAMER /!\ /!\ /!\
+‾‾‾ ‾‾‾ ‾‾‾                     ‾‾‾ ‾‾‾ ‾‾‾
+Everything written here has been deduced.
+Some information can be (and certainly are) wrong.
+Do not take this document as a documentation but as a research draft!
+
+I'm not responsible for any problems related to the information presented here.
+
+
+
+Unknown bytes :
+Logo : 28 0C 01 00
+Rf   : 58 1A 00 00
+Wlan : 1E 21 00 00
+
+One SPLASH!! is :
+- 512 bytes HEADER :
+  - First 8 bytes are "SPLASH!!"
+    !> Required 
+    => Address from 0x0 to 0x7
+    => Sequence : 53 50 4C 41 53 48 21 21
+     \\           S  P  L  A  S  H  !  !
+  - 24 next bytes are empty
+    ?> Requirement not tested. Values might not be empty...
+    => Address from 0x8 to 0x1F
+    => Sequence : 24 time 00
+  - 4 next bytes are width
+    !> Required & can be <= to 1080 (I do not tested yet if small images can be bigger than it should)
+    => Address from 0x20 to 0x23
+    => Sequence : Variable 32bit signed integer
+    => Little byte order
+  - 4 next bytes are height
+    !> Required & can be <= to 1920 (I do not tested yet if small images can be bigger than it should)
+    => Address from 0x24 to 0x27
+    => Sequence : Variable 32bit signed integer
+    => Little byte order
+  - 4 next bytes usage not found (yet)
+    !> Required (default screen or black screen if missing)
+    => Address from 0x28 to 0x2B
+    => Sequence : Not identical / Logic not found (yet)
+  - 4 next bytes usage not found (yet)
+    ?> Requirement not tested. Values might not be empty...
+    => Address from 0x2C to 0x2F
+    => Sequence : 01 00 00 00
+  - 112 next bytes are empty
+    ?> Requirement not tested. Values might not be empty...
+    => Address from 0x30 to 0x9F
+    => Sequence : 24 time 00
+  - 64 next bytes is name string
+    ~> Not required. String can be empty !
+    => Address from 0xA0 to 0xDF
+    => Sequence : Variable ASCII Char. Name of the source file used for the image. For reference only.
+
+First splash 

@@ -1,14 +1,19 @@
-##FILE FOR TEST ONLY, WIP Project !
+#!/bin/env python3
+
+##FILE IS FOR TESTING ONLY, WIP Project !
 ##NOT COMPATIBLE WITH COLOR OS logo.bin
 
 from app.logo_utils import LogoUtils
 
-utils = LogoUtils()
+utils = LogoUtils("logo-oos.bin")
+splashes = utils.get_splashes()
+for splash in splashes:
+    print("Name : %s" % splashes[splash]["name"])
+    print("Desc : %s" % splashes[splash]["description"])
+    print("Dime : %s" % splashes[splash]["dimentions"])
+    print("Cont : %s" % splashes[splash]["content"])
 
-file = open("logo-cm.bin", "rb")
-byte = file.read()
+#splashes = utils.split_splash(byte)
 
-splashes = utils.split_splash(byte)
-
-for element in splashes:
-    print("Content : ", splashes[element]["description"])
+#for element in splashes:
+#    print("Content : ", splashes[element]["description"])
